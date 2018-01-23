@@ -20,7 +20,7 @@ Start eclipse and import from top level directory as existing maven projects.
 
 ## Run standalone
 
-	java -jar java -jar starter/target/hello.jar 
+	java -jar starter/target/hello.jar 
 
 ## Run in Apache Karaf
 
