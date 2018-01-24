@@ -105,13 +105,31 @@
 			</plugin>
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-resolver-maven-plugin</artifactId>
+				<version>3.5.0</version>
+				<configuration>
+					<failOnChanges>false</failOnChanges>
+					<useMavenDependencies>true</useMavenDependencies>
+					<bndruns>
+						<bndrun>hello2.bndrun</bndrun>
+					</bndruns>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>resolve</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-export-maven-plugin</artifactId>
 				<version>3.5.0</version>
 				<configuration>
 					<bndruns>
 						<bndrun>hello.bndrun</bndrun>
 					</bndruns>
-					<useMavenDependencies>false</useMavenDependencies>
 					<resolve>true</resolve>
 					<failOnChanges>false</failOnChanges>
 				</configuration>
