@@ -2,7 +2,7 @@
 
 -resolve.effective: active;skip:="osgi.service"
 
--runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
+-runfw: org.apache.felix.framework
 -runee: JavaSE-1.8
 
 -runrequires: \
