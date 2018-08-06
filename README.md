@@ -20,7 +20,7 @@ Start eclipse and import from top level directory as existing maven projects.
 
 ## Run standalone
 
-	java -jar starter/target/hello.jar 
+	java -jar starter/target/app.jar 
 
 ## Run in Apache Karaf
 
@@ -30,9 +30,4 @@ In the karaf shell type:
 	feature:install scr
 	install -s mvn:net.lr.demo/net.lr.ds.hello/1.0.0-SNAPSHOT
 
-- cd packaging/index
-- mvn clean install
-- cd ../..
-- mvn clean install
-- Package consumer and service as docker images using the `sh build.sh` in the respective directories
 
