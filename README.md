@@ -1,5 +1,7 @@
 # OSGi Declarative Services Hello World Example
 
+[![Build Status](https://travis-ci.com/cschneider/osgi-ds-hello-world.svg?branch=master)](https://travis-ci.com/cschneider/osgi-ds-hello-world)
+
 ## Prerequisites
 
 Install
