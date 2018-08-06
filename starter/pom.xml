@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -6,8 +7,8 @@
         <artifactId>net.lr.ds.hello.parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>starter</artifactId>
-    
+    <artifactId>net.lr.ds.hello.starter</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>net.lr.demo</groupId>
@@ -22,6 +23,16 @@
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.framework</artifactId>
             <version>6.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.log</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.logback</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -81,13 +92,8 @@
             <version>1.1.0</version>
         </dependency>
 
-<!-- 
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.gogo.jline</artifactId>
-            <version>1.0.10</version>
-        </dependency>
- -->
+        <!-- <dependency> <groupId>org.apache.felix</groupId> <artifactId>org.apache.felix.gogo.jline</artifactId> 
+            <version>1.0.10</version> </dependency> -->
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.scr</artifactId>
@@ -100,9 +106,9 @@
             </exclusions>
         </dependency>
         <dependency>
-	        <groupId>org.apache.felix</groupId>
-	        <artifactId>org.apache.felix.http.jetty</artifactId>
-	        <version>4.0.2</version>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.http.jetty</artifactId>
+            <version>4.0.2</version>
         </dependency>
     </dependencies>
 
@@ -114,6 +120,7 @@
                 <version>${bnd.version}</version>
                 <configuration>
                     <localURLs>REQUIRED</localURLs>
+                    <attach>false</attach>
                 </configuration>
                 <executions>
                     <execution>
@@ -130,13 +137,13 @@
                 <version>${bnd.version}</version>
                 <configuration>
                     <failOnChanges>false</failOnChanges>
-                    <useMavenDependencies>true</useMavenDependencies>
                     <bndruns>
-                        <bndrun>hello2.bndrun</bndrun>
+                        <bndrun>app.bndrun</bndrun>
                     </bndruns>
                 </configuration>
                 <executions>
                     <execution>
+                        <phase>package</phase>
                         <goals>
                             <goal>resolve</goal>
                         </goals>
@@ -149,10 +156,8 @@
                 <version>${bnd.version}</version>
                 <configuration>
                     <bndruns>
-                        <bndrun>hello.bndrun</bndrun>
+                        <bndrun>app.bndrun</bndrun>
                     </bndruns>
-                    <resolve>true</resolve>
-                    <failOnChanges>false</failOnChanges>
                 </configuration>
                 <executions>
                     <execution>
